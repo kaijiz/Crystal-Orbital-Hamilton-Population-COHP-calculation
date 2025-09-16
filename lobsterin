@@ -1,0 +1,13 @@
+COHPstartEnergy -20
+COHPendEnergy    10
+includeOrbitals  s p d
+
+
+
+
+cohpbetween atom 2 and atom 26 cell 1 0 0
+cohpbetween atom 2 and atom 18 cell 0 0 0
+cohpbetween atom 2 and atom 34 cell 1 0 0
+cohpbetween atom 2 and atom 30 cell 0 0 0
+cohpbetween atom 2 and atom 38 cell 1 0 0
+cohpbetween atom 2 and atom 24 cell 0 0 0
