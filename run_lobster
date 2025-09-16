@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+##NECESSARY JOB SPECIFICATIONS
+#SBATCH --account=132715781***
+#SBATCH --job-name=AIPS_cohp
+#SBATCH --time=8:00:00
+#SBATCH --ntasks=40
+#SBATCH --ntasks-per-node=40
+#SBATCH --mem-per-cpu=5G
+#SBATCH --output=job.%j
+
+##OPTIONAL JOB SPECIFICATIONS
+#SBATCH --mail-type=ALL                #Send email on all job events
+#SBATCH --mail-user=kaijiz@tamu.edu  #Send all emails to email_address
+
+
+## YOUR COMMANDS BELOW
+topdir=`pwd`
+
+ml purge                                        # Purge all modules
+ml intel/2023a                                  # Load modules
+#ml ~/bin/vasp.5.4.4.std
+#vaspexe=/home/kaijiz/bin/vasp.5.4.4.std
+#module --ignore-cache load /home/kaijiz/bin/vasp.5.4.4.std
+#lobster=/home/kaijiz/bin/lobster-5.0.0
+lobster=/home/kaijiz/bin/lobster-5.0.0/lobster-5.0.0
+export I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so
+cd $topdir/
+srun ${lobster} > log.txt
